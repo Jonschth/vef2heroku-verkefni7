@@ -1,6 +1,11 @@
 from bottle import run, route, get, post, request, template, response, redirect
 from  verkefni7_2 import *
 
+from sys import argv
+
+import bottle
+from bottle import *
+bottle.debug(True)
 
 @route('/')
 def val():
@@ -103,4 +108,4 @@ def logout():
 
 
 
-run(host='localhost', port=8080, debug=True)
+bottle.run(host='0.0.0.0', port=argv[1], debug=True)
